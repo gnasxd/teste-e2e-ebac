@@ -48,7 +48,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         produtosPage.buscarProduto('Bruno Compete Hoodie')
         produtosPage.addProdutoCarrinho('M', 'Blue', 1)
         cy.get('.woocommerce-message').should('contain', '“Bruno Compete Hoodie” foi adicionado no seu carrinho.')
-       
+        cy.get('.woocommerce-message > .button').click()
+        cy.get('.checkout-button').click()
+        
       
     });
 
